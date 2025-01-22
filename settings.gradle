@@ -1,0 +1,6 @@
+rootProject.name = 'fxworld'
+
+include 'island'
+include 'central'
+include 'island-console'
+
