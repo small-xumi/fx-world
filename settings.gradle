@@ -1,4 +1,4 @@
-rootProject.name = 'fxworld'
+rootProject.name = 'fx-world'
 
 include 'island'
 include 'central'

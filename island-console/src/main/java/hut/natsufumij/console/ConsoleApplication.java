@@ -2,9 +2,6 @@ package hut.natsufumij.console;
 
 import hut.natsufumij.island.HelloApplication;
 import hut.natsufumij.island.app.AppInfo;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,13 +9,9 @@ import java.io.*;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class ConsoleApplication extends HelloApplication {
 
@@ -66,7 +59,7 @@ public class ConsoleApplication extends HelloApplication {
 
         String osName = System.getProperty("os.name");
         if (osName.toLowerCase().contains("windows")) {
-            envCmd = "cmd.exe";
+            envCmd = "powershell.exe";
         } else {
             envCmd = "sh";
         }
