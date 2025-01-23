@@ -4,4 +4,5 @@ module fxworld.island {
 
     opens hut.natsufumij.island to javafx.fxml;
     exports hut.natsufumij.island;
+    exports hut.natsufumij.island.app;
 }
