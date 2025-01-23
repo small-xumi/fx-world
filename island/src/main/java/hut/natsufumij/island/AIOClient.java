@@ -1,5 +1,7 @@
 package hut.natsufumij.island;
 
+import hut.natsufumij.island.app.AppEvent;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -26,7 +28,7 @@ public class AIOClient {
                 String appData = app.pushAppData().toString();
 
                 // Send a message to the server
-                String message = "Hello, Server>"+appData;
+                String message = appData;
                 ByteBuffer buffer = ByteBuffer.wrap(message.getBytes());
                 Future<Integer> writeResult = clientChannel.write(buffer);
                 writeResult.get(); // Wait until the message is sent
@@ -46,6 +48,20 @@ public class AIOClient {
                     byte[] bytes = new byte[read.remaining()];
                     read.get(bytes);
                     String response = new String(bytes);
+                    //[cmd]central,console,ok,no
+                    if(response.startsWith("[cmd]")){
+                        //
+                        String cmd = response.substring(5);
+                        String[] cmds = cmd.split(",");
+                        String[] args;
+                        if(cmds.length>3){
+                            args = new String[cmds.length-3];
+                            System.arraycopy(cmds,3,args,0,args.length);
+                        }else {
+                            args = new String[]{};
+                        }
+                        ap.receiveEvent(new AppEvent(cmds[0],cmds[1],cmds[2],args));
+                    }
                     System.out.println("Received response: " + response);
                 }
 

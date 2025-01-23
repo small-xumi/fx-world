@@ -72,7 +72,12 @@ public class AIOServer {
     public static void handleMsg(String message, AsynchronousSocketChannel channel) {
         System.out.println("Received message: " + message);
 
+        String res = "Echo";
+        if(message.startsWith("AppInfo")){
+            //[cmd]central,console,ok,no
+            res = "[cmd]central,console,ok,no";
+        }
         // Echo the message back to the client
-        channel.write(ByteBuffer.wrap(("Echo: " + message).getBytes()));
+        channel.write(ByteBuffer.wrap((res).getBytes()));
     }
 }
