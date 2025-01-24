@@ -33,6 +33,11 @@ public class AIOClient {
                 Future<Integer> writeResult = clientChannel.write(buffer);
                 writeResult.get(); // Wait until the message is sent
 
+                message = "第二个文本内容";
+                buffer = ByteBuffer.wrap(message.getBytes());
+                writeResult = clientChannel.write(buffer);
+                writeResult.get(); // Wait until the message is sent
+
                 ByteBuffer read = ByteBuffer.allocate(1024*100);//100KB
                 // Loop to continuously read messages from the server
                 while (true) {

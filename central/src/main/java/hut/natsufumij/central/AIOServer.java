@@ -33,10 +33,11 @@ public class AIOServer {
                     finalServerChannel.accept(null, this); // Accept the next connection
 
                     ByteBuffer buffer = ByteBuffer.allocate(1024*100);//100KB
-                    result.read(buffer, buffer, new CompletionHandler<Integer, ByteBuffer>() {
+                    result.read(buffer, buffer, new CompletionHandler<>() {
                         @Override
                         public void completed(Integer bytesRead, ByteBuffer buffer) {
                             buffer.flip();
+                            //1024*100 = 102400 [六位数]
                             String message = new String(buffer.array(), 0, bytesRead);
                             handleMsg(message, channel);
                         }
