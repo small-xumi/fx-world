@@ -2,7 +2,6 @@ package hut.natsufumij.calc;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +25,7 @@ public class CalcController {
             myLabel.setText(message);
         }catch (Exception ex){
             System.err.println(ex.getMessage());
+            myLabel.setText("Load Mysql Data Error.");
         }
     }
 }

@@ -1,14 +1,14 @@
 module fxworld.island.calc {
-    requires javafx.fxml;
     requires javafx.controls;
-    requires fxworld.island;
+    requires javafx.fxml;
     requires spring.boot;
     requires spring.boot.autoconfigure;
     requires spring.context;
+    requires spring.beans;
     requires spring.jdbc;
     requires java.sql;
-    requires spring.tx;
     requires org.slf4j;
+    requires fxworld.island;
     opens fonts;
 
     opens hut.natsufumij.calc to javafx.fxml, spring.core;
