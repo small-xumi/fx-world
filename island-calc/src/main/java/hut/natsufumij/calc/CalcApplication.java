@@ -12,11 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.io.IOException;
 
+@SpringBootApplication
 public class CalcApplication extends HelloApplication {
     @Override
     protected void prepareStage(Stage stage) {
@@ -27,8 +30,11 @@ public class CalcApplication extends HelloApplication {
 
     @Override
     public void init() throws Exception {
+        SpringApplication.run(CalcApplication.class);
         SpringApplicationBuilder builder = new SpringApplicationBuilder(AppConfig.class);
         context = builder.run();
+        ClientConfig bean = context.getBean(ClientConfig.class);
+        System.out.println("abdsasgvdsafsa"+ bean.getMyAppName());
     }
 
     @Override
