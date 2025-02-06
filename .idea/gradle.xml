@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/central" />
             <option value="$PROJECT_DIR$/island" />
+            <option value="$PROJECT_DIR$/island-calc" />
             <option value="$PROJECT_DIR$/island-console" />
           </set>
         </option>
