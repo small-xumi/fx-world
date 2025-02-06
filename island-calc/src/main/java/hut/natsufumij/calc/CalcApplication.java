@@ -30,7 +30,7 @@ public class CalcApplication extends HelloApplication {
 
     @Override
     public void init() throws Exception {
-        SpringApplication.run(CalcApplication.class);
+//        SpringApplication.run(CalcApplication.class);
         SpringApplicationBuilder builder = new SpringApplicationBuilder(AppConfig.class);
         context = builder.run();
         ClientConfig bean = context.getBean(ClientConfig.class);
