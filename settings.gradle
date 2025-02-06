@@ -3,4 +3,6 @@ rootProject.name = 'fx-world'
 include 'island'
 include 'central'
 include 'island-console'
+include 'island-calc'
+include 'island-calc'
 

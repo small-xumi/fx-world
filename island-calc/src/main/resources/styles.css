@@ -1,0 +1,61 @@
+/* styles.css */
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #0f0f0f, #2c2c2c);
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #1e1e1e, #3e3e3e);
+    -fx-background-radius: 10;
+    -fx-text-fill: #00ffcc;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 204, 0.6), 10, 0, 0, 0);
+    -fx-transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #3e3e3e, #1e1e1e);
+    -fx-transform: scale(1.05);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 204, 1), 20, 0, 0, 0);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+    -fx-transform: scale(0.95);
+    -fx-effect: none;
+}
+
+.label {
+    -fx-text-fill: #00ffcc;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.display-container {
+    -fx-background-color: #2c3e50;
+    -fx-border-color: #00ffcc;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 204, 0.6), 5, 0, 0, 0);
+}
+
+.expression {
+    -fx-text-fill: #00ffcc;
+    -fx-font-family: "Press Start 2P", monospace;
+    -fx-font-size: 16px;
+    -fx-text-alignment: left; /* 靠左对齐 */
+}
+
+.result {
+    -fx-text-fill: #00ffcc;
+    -fx-font-family: "Press Start 2P", monospace;
+    -fx-font-size: 16px;
+    -fx-text-alignment: right; /* 靠右对齐 */
+    -fx-alignment: center-right;
+}
